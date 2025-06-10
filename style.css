@@ -1,0 +1,145 @@
+:root{
+    --cor-um:#fffcf6;
+    --cor-dois:#f9b295;
+    --cor-tres: #ee886f;
+    --cor-quatro: #ffe8c1;
+    --cor-cinco:#b9e2de;
+    --cor:#7abfc2;
+}
+
+nav{
+    background-color: var(--cor-um);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav img{
+    width: 45%;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex; /* Para os itens ficarem na linha em telas grandes */
+    margin: 0;
+    padding: 0;
+}
+
+.hamburger {
+    display: none; /* Escondido por padrão em telas grandes */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative; /* Para centralizar as linhas se necessário */
+    z-index: 2; /* Para ficar acima da lista */
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-tres);
+    border-radius: 10px;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animação do Hambúrguer (quando ativo) */
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0; /* Linha do meio some */
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Primeira linha gira */
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Terceira linha gira */
+}
+
+/* ... (Seu CSS anterior para .navbar, .navbar-brand, .hamburger, .hamburger-line permanece o mesmo) ... */
+
+/* Estilos da Lista de Navegação (para telas maiores - continua inline) */
+.nav-list {
+    list-style: none;
+    display: flex; /* Para os itens ficarem na linha em telas grandes */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin-left: 2rem;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-list a:hover {
+    color: #ddd;
+}
+
+/* Responsividade: Telas menores (Mobile) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Mostra o hambúrguer em telas menores */
+    }
+
+    /* O navbar precisa de position: relative para posicionar a lista */
+    .navbar {
+        position: relative; /* Já tinha no exemplo original, mas é crucial aqui */
+        /* ... outros estilos do navbar ... */
+    }
+
+    .nav-list {
+        display: none; /* Esconde a lista por padrão */
+        flex-direction: column; /* Itens da lista em coluna */
+        list-style: none; /* Garante que não tenha marcadores */
+        margin: 0;
+        padding: 0.5rem 0; /* Padding interno da lista */
+        background-color: #444; /* Cor de fundo do menu */
+        position: absolute; /* Posiciona relativamente ao .navbar */
+        top: 100%; /* Começa logo abaixo do navbar */
+        right: 0; /* Alinha à direita do navbar */
+        min-width: 150px; /* Largura mínima do menu */
+        max-width: 200px; /* Largura máxima para não ficar muito grande */
+        border: 1px solid #555;
+        border-top: none; /* Remove a borda superior se o navbar já tiver */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra para profundidade */
+        z-index: 90; /* Abaixo do hambúrguer, mas acima do conteúdo */
+        opacity: 0; /* Inicialmente transparente para transição */
+        transform: translateY(-10px); /* Levemente para cima para a transição */
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Animação suave */
+    }
+
+    .nav-list.active {
+        display: flex; /* Mostra a lista quando ativa */
+        opacity: 1; /* Torna visível */
+        transform: translateY(0); /* Volta à posição original */
+    }
+
+    .nav-list li {
+        width: 100%; /* Faz o item ocupar toda a largura do menu */
+        margin: 0; /* Remove margens extras */
+    }
+
+    .nav-list a {
+        display: block; /* Para o padding funcionar em toda a área do link */
+        color: white;
+        text-decoration: none;
+        padding: 0.8rem 1.2rem; /* Padding interno dos links */
+        transition: background-color 0.2s ease-in-out;
+        white-space: nowrap; /* Evita que o texto quebre a linha */
+        overflow: hidden; /* Esconde overflow se o texto for muito longo */
+        text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    .nav-list a:hover {
+        background-color: #555; /* Fundo mais claro ao passar o mouse */
+        color: white;
+    }
