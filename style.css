@@ -1,38 +1,37 @@
-:root{
-    --cor-um:#fffcf6;
-    --cor-dois:#f9b295;
+:root {
+    --cor-um: #fffcf6;
+    --cor-dois: #f9b295;
     --cor-tres: #ee886f;
     --cor-quatro: #ffe8c1;
-    --cor-cinco:#b9e2de;
-    --cor:#7abfc2;
+    --cor-cinco: #b9e2de;
+    --cor: #7abfc2;
 }
 
-nav{
+/* Estilos base (mobile first) */
+nav {
     background-color: var(--cor-um);
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-nav img{
+nav img {
     width: 45%;
+    height: auto;
 }
 
-.nav-list{
-    list-style: none;
-    display: flex; /* Para os itens ficarem na linha em telas grandes */
-    margin: 0;
-    padding: 0;
+.link-telagrande {
+    display: none;
 }
 
 .hamburger {
-    display: none; /* Escondido por padrão em telas grandes */
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    position: relative; /* Para centralizar as linhas se necessário */
-    z-index: 2; /* Para ficar acima da lista */
+    position: relative;
+    z-index: 2;
 }
 
 .hamburger-line {
@@ -45,101 +44,150 @@ nav img{
     transition: all 0.3s ease-in-out;
 }
 
-/* Animação do Hambúrguer (quando ativo) */
 .hamburger.active .hamburger-line:nth-child(2) {
-    opacity: 0; /* Linha do meio some */
+    opacity: 0;
 }
 
 .hamburger.active .hamburger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg); /* Primeira linha gira */
+    transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active .hamburger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg); /* Terceira linha gira */
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ... (Seu CSS anterior para .navbar, .navbar-brand, .hamburger, .hamburger-line permanece o mesmo) ... */
+.navbar {
+    position: relative;
+}
 
-/* Estilos da Lista de Navegação (para telas maiores - continua inline) */
 .nav-list {
+    display: none;
+    flex-direction: column;
     list-style: none;
-    display: flex; /* Para os itens ficarem na linha em telas grandes */
     margin: 0;
-    padding: 0;
+    padding: 0.5rem 0;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    min-width: 150px;
+    max-width: 200px;
+    border-radius: 10px;
+    border-top: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 90;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.nav-list.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(-10px);
 }
 
 .nav-list li {
-    margin-left: 2rem;
+    width: 100%;
+    margin: 0;
 }
 
 .nav-list a {
-    color: white;
+    display: block;
+    color: var(--cor-tres);
     text-decoration: none;
-    padding: 0.5rem 0;
-    transition: color 0.3s ease-in-out;
+    padding: 0.8rem 1.2rem;
+    transition: background-color 0.2s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    font-family: "Rethink Sans", sans-serif;
 }
 
 .nav-list a:hover {
-    color: #ddd;
+    background-color: var(--cor-dois);
+    color: white;
 }
 
-/* Responsividade: Telas menores (Mobile) */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Mostra o hambúrguer em telas menores */
+.banner{
+    position: relative;
+    text-align: left;
+}
+
+.banner p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Newsreader", serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-cards{
+    display: flex;
+    justify-content: center;
+    width: 45%;
+}
+
+/* Estilos para telas maiores (desktop) */
+@media (min-width: 769px) {
+    nav img {
+        width: 20%;
+        height: auto;
     }
 
-    /* O navbar precisa de position: relative para posicionar a lista */
-    .navbar {
-        position: relative; /* Já tinha no exemplo original, mas é crucial aqui */
-        /* ... outros estilos do navbar ... */
+    .hamburger {
+        display: none;
+    }
+
+    .link-telagrande {
+        display: flex;
+        justify-content: center;
+    }
+
+    .link-telagrande a {
+        padding: 0 30px;
+        font-family: "Rethink Sans", sans-serif;
+        font-size: 25px;
+        color: var(--cor-tres);
+        border-radius: 10px;
+    }
+
+    .link-telagrande a:hover {
+        background-color: var(--cor-tres);
+        color: var(--cor-um);
     }
 
     .nav-list {
-        display: none; /* Esconde a lista por padrão */
-        flex-direction: column; /* Itens da lista em coluna */
-        list-style: none; /* Garante que não tenha marcadores */
-        margin: 0;
-        padding: 0.5rem 0; /* Padding interno da lista */
-        background-color: #444; /* Cor de fundo do menu */
-        position: absolute; /* Posiciona relativamente ao .navbar */
-        top: 100%; /* Começa logo abaixo do navbar */
-        right: 0; /* Alinha à direita do navbar */
-        min-width: 150px; /* Largura mínima do menu */
-        max-width: 200px; /* Largura máxima para não ficar muito grande */
-        border: 1px solid #555;
-        border-top: none; /* Remove a borda superior se o navbar já tiver */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra para profundidade */
-        z-index: 90; /* Abaixo do hambúrguer, mas acima do conteúdo */
-        opacity: 0; /* Inicialmente transparente para transição */
-        transform: translateY(-10px); /* Levemente para cima para a transição */
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Animação suave */
-    }
-
-    .nav-list.active {
-        display: flex; /* Mostra a lista quando ativa */
-        opacity: 1; /* Torna visível */
-        transform: translateY(0); /* Volta à posição original */
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+        opacity: 1;
+        transform: none;
     }
 
     .nav-list li {
-        width: 100%; /* Faz o item ocupar toda a largura do menu */
-        margin: 0; /* Remove margens extras */
+        margin-left: 2rem;
+        width: auto;
     }
 
     .nav-list a {
-        display: block; /* Para o padding funcionar em toda a área do link */
         color: white;
-        text-decoration: none;
-        padding: 0.8rem 1.2rem; /* Padding interno dos links */
-        transition: background-color 0.2s ease-in-out;
-        white-space: nowrap; /* Evita que o texto quebre a linha */
-        overflow: hidden; /* Esconde overflow se o texto for muito longo */
-        text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
-        text-align: left; /* Alinha o texto à esquerda */
+        padding: 0.5rem 0;
     }
 
     .nav-list a:hover {
-        background-color: #555; /* Fundo mais claro ao passar o mouse */
-        color: white;
+        color: #ddd;
+        background: none;
     }
+}
