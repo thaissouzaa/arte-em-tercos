@@ -115,18 +115,33 @@ nav img {
     text-align: left;
 }
 
+
+.titulo-servicos{
+    padding: 40px;
+    color: var(--cor-tres);
+    font-family: "Rethink Sans", sans-serif;
+    font-weight: 100;
+}
+
 .container-cards{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 30%;
-    height: auto;
-
+    width: 55%;
+    
 }
 
-.btn .btn-primary{
+.card{
+    display: flex !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+    margin: 10px;
+}
+
+
+.btn-primary{
     background-color: var(--cor-dois) !important;
+    border: var(--cor-tres) !important;
 }
 
 /* Estilos para telas maiores (desktop) */
