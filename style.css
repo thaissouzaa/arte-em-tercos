@@ -126,6 +126,7 @@ nav img {
 .container-cards{
     display: flex;
     justify-content: center;
+    overflow-x: scroll;
     
 }
 
