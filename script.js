@@ -19,12 +19,17 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
-const card_servico = document.querySelector('.cards-servicos');
-const scroll_amount = 320;
+document.querySelectorAll('.scroll-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetSelector = button.getAttribute('data-target');
+        const direction = parseInt(button.getAttribute('data-direction'), 10);
+        const container = document.querySelector(targetSelector);
 
-function ScrollCards(direction){
-    card_servico.scrollBy({
-        left: scroll_amount * direction,
-        behavior: 'smooth'
+        if (container) {
+            container.scrollBy({
+                left: 320 * direction,
+                behavior: 'smooth'
+            });
+        }
     });
-}
+});

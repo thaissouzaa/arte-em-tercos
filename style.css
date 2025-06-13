@@ -117,16 +117,33 @@ nav img {
 
 .topo-titulo{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
+    margin-top: 50px;
+
 }
 
 .titulo{
-    padding: 50px 0 0 20px;
     color: var(--cor-tres);
     font-family: "Rethink Sans", sans-serif;
     font-weight: 100;
     font-size: 25px;
+    margin-left: 10px;
+}
+
+.topo-titulo a{
+    color: gray;
+    border: solid 1px gray;
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: white;
+    font-size: 10px;
+    margin-left:10px ;
+}
+
+.topo-titulo a:hover{
+    background-color: gray;
+    color: white;
 }
 
 .disabled{
