@@ -18,18 +18,44 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 
-
+// SCROLL COM BOTÕES
 document.querySelectorAll('.scroll-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const targetSelector = button.getAttribute('data-target');
-        const direction = parseInt(button.getAttribute('data-direction'), 10);
-        const container = document.querySelector(targetSelector);
+  button.addEventListener('click', () => {
+    const container = document.querySelector(button.dataset.target);
+    const direction = parseInt(button.dataset.direction);
+    const scrollAmount = 300; // Ajuste conforme o tamanho do seu card
 
-        if (container) {
-            container.scrollBy({
-                left: 320 * direction,
-                behavior: 'smooth'
-            });
-        }
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
     });
+  });
+});
+
+// SCROLL COM TOQUE (SWIPE) PARA MOBILE
+document.querySelectorAll('.cards-servicos').forEach(container => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  container.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5; // Aumente se quiser que deslize mais rápido
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  container.addEventListener('touchend', () => {
+    isDown = false;
+  });
+
+  container.addEventListener('touchcancel', () => {
+    isDown = false;
+  });
 });

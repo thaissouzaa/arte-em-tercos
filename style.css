@@ -156,6 +156,9 @@ nav img {
     justify-content: center;
     overflow: hidden;
     width: 100%;
+    max-width: 500px;
+    position: relative;
+    margin: auto;
 }
 
 .cards-servicos{
@@ -163,7 +166,18 @@ nav img {
     overflow-x: auto;
     scroll-behavior: smooth;
     gap: 1rem;
+    scroll-snap-type: x mandatory;
 }
+
+.cards-servicos::-webkit-scrollbar {
+  display: none; /* Esconde a barra de rolagem */
+}
+
+.card-track{
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
 .card{
     display: flex !important;
     justify-content: center !important;
@@ -174,6 +188,7 @@ nav img {
     width: 70% !important;
     padding-bottom: 10px !important;
     flex-grow: 1;
+    box-sizing: border-box;
 }
 
 .card img{
@@ -186,12 +201,13 @@ nav img {
 }
 
 .button {
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
+    display: none;
     gap: 1rem;
     margin-top: 1rem;
-    width: 100px;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .button button {
@@ -203,8 +219,6 @@ nav img {
     cursor: pointer;
     border-radius: 150%;
     width: 40px;
-    display: flex;
-    justify-content: center;
 }
 
 .cards-servicos::-webkit-scrollbar {
@@ -214,6 +228,35 @@ nav img {
 .btn-primary{
     background-color: var(--cor-dois) !important;
     border: var(--cor-tres) !important;
+}
+
+.footer{
+    background-color: var(--cor-um);
+    display: flex;
+
+}
+
+.footer-img{
+    display: flex;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.footer-img img{
+    width: 80%;
+}
+
+.footer-icones{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icones a{
+    margin: 10px;
+}
+
+.footer-icones a img{
+    width: 20px;
 }
 
 /* Estilos para telas maiores (desktop) */
@@ -269,4 +312,19 @@ nav img {
         color: #ddd;
         background: none;
     }
+
+.button {
+    display: block;
+    justify-content:space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+}
+
 }
