@@ -17,3 +17,14 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 });
+
+
+const card_servico = document.querySelector('.cards-servicos');
+const scroll_amount = 320;
+
+function ScrollCards(direction){
+    card_servico.scrollBy({
+        left: scroll_amount * direction,
+        behavior: 'smooth'
+    });
+}

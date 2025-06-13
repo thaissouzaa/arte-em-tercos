@@ -126,17 +126,47 @@ nav img {
 .container-cards{
     display: flex;
     justify-content: center;
-    overflow-x: scroll;
-    
+    overflow: hidden;
+    width: 100%;
 }
 
+.cards-servicos{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem;
+}
 .card{
     display: flex !important;
     justify-content: center !important;
     text-align: center !important;
     margin: 10px;
+    overflow: hidden;
+    min-width: 250px;
+    flex: 0 0 auto;
 }
 
+.button {
+    display: flex;
+    justify-content:space-between
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.button button {
+    background-color: var(--cor-tres);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.cards-servicos::-webkit-scrollbar {
+    display: none; /* opcional: esconde scrollbar */
+}
 
 .btn-primary{
     background-color: var(--cor-dois) !important;
