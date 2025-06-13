@@ -115,12 +115,23 @@ nav img {
     text-align: left;
 }
 
+.topo-titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-.titulo-servicos{
-    padding: 40px;
+.titulo{
+    padding: 50px 0 0 20px;
     color: var(--cor-tres);
     font-family: "Rethink Sans", sans-serif;
     font-weight: 100;
+    font-size: 25px;
+}
+
+.disabled{
+    display: flex;
+    align-items: center;
 }
 
 .container-cards{
@@ -135,7 +146,6 @@ nav img {
     overflow-x: auto;
     scroll-behavior: smooth;
     gap: 1rem;
-    padding: 1rem;
 }
 .card{
     display: flex !important;
@@ -143,8 +153,9 @@ nav img {
     text-align: center !important;
     margin: 10px;
     overflow: hidden;
-    min-width: 250px;
+    min-width: 200px;
     flex: 0 0 auto;
+    width: 70% !important;
 }
 
 .button {
@@ -165,6 +176,8 @@ nav img {
     cursor: pointer;
     border-radius: 150%;
     width: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 .cards-servicos::-webkit-scrollbar {
