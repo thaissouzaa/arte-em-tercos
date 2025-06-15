@@ -257,6 +257,52 @@ nav img {
 
 .footer-icones a img{
     width: 20px;
+    background-color: var(--cor);
+    border-radius: 100%;
+    padding: 10px;
+    display: inline-block;
+    box-sizing: content-box;
+}
+
+.footer-direitos{
+    text-align: center;
+    font-family: "Rethink Sans", sans-serif;
+    font-size: 15px;
+}
+
+.container-quemsomos{
+    display: flex;
+    justify-content:flex-start;
+    background-color: var(--cor-cinco);
+    padding: 15px; 
+    margin: 100px 0 50px 0;   
+    width: 100;
+}
+
+.quemsomos-img{
+    width: 50%;
+    align-content: center;
+
+}
+
+.quemsomos-img img{
+    width:100%;
+}
+
+.quemsomos-texto{
+    font-family: "Rethink Sans", sans-serif;
+    text-align: center;
+    color: var(--cor-dois);
+    width: 50%;
+}
+
+.quemsomos-texto h3{
+    font-size: 30px;
+}
+
+.quemsomos-texto p{
+    font-size: 15px;
+    font-weight: 500;
 }
 
 /* Estilos para telas maiores (desktop) */
