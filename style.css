@@ -129,6 +129,7 @@ nav img {
     font-weight: 100;
     font-size: 25px;
     margin-left: 10px;
+    margin: 20px;
 }
 
 .topo-titulo a{
@@ -182,10 +183,10 @@ nav img {
     display: flex !important;
     justify-content: center !important;
     text-align: center !important;
-    margin: 10px;
+    margin: 5px;
     overflow: hidden;
     flex: 0 0 auto;
-    width: 70% !important;
+    width: 25% !important;
     padding-bottom: 10px !important;
     flex-grow: 1;
     box-sizing: border-box;
@@ -221,6 +222,8 @@ nav img {
     width: 40px;
 }
 
+
+
 .cards-servicos::-webkit-scrollbar {
     display: none; /* opcional: esconde scrollbar */
 }
@@ -230,8 +233,11 @@ nav img {
     border: var(--cor-tres) !important;
 }
 
-.footer{
+
+footer{
     background-color: var(--cor-um);
+}
+.footer{
     display: flex;
 
 }
@@ -272,7 +278,8 @@ nav img {
 
 .container-quemsomos{
     display: flex;
-    justify-content:flex-start;
+    justify-content:center;
+    flex-direction: column;
     background-color: var(--cor-cinco);
     padding: 15px; 
     margin: 100px 0 50px 0;   
@@ -280,7 +287,6 @@ nav img {
 }
 
 .quemsomos-img{
-    width: 50%;
     align-content: center;
 
 }
@@ -293,7 +299,7 @@ nav img {
     font-family: "Rethink Sans", sans-serif;
     text-align: center;
     color: var(--cor-dois);
-    width: 50%;
+    padding-top: 20px;
 }
 
 .quemsomos-texto h3{
@@ -303,6 +309,36 @@ nav img {
 .quemsomos-texto p{
     font-size: 15px;
     font-weight: 500;
+}
+
+.container-cards2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 5px 30px 5px;
+}
+
+.container-contato{
+    display: flex;
+    justify-content: center;
+
+}
+
+#card-contato{
+    margin: 50px;
+}
+
+.contatos{
+    display: flex;
+    justify-content: left;
+    text-align: center;
+}
+
+.contatos img{
+    width: 7%;
+    padding: 5px;
+    margin-left: 15px;
+    font-family: "Rethink Sans", sans-serif;
 }
 
 /* Estilos para telas maiores (desktop) */
