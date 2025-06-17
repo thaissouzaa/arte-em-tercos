@@ -530,11 +530,6 @@ footer{
     color: var(--cor-um) !important;
 }
 
-.scroll-btn{
-    display: flex;
-    justify-content: space-between;
-}
-
 footer{
     background-color: var(--cor-um);
 }
@@ -580,20 +575,21 @@ footer{
 .container-quemsomos{
     display: flex;
     justify-content:center;
-    flex-direction: column;
+    flex-direction: row;
     background-color: var(--cor-cinco);
     padding: 15px; 
     margin: 100px 0 50px 0;   
-    width: 100;
+    width: 100%;
 }
 
 .quemsomos-img{
     align-content: center;
+    width: 50%;
 
 }
 
 .quemsomos-img img{
-    width:100%;
+    width:95%;
 }
 
 .quemsomos-texto{
@@ -601,14 +597,17 @@ footer{
     text-align: center;
     color: var(--cor-dois);
     padding-top: 20px;
+    width: 50%;
+    justify-content: center;
 }
 
 .quemsomos-texto h3{
-    font-size: 30px;
+    font-size: 40px;
+    padding: 15px;
 }
 
 .quemsomos-texto p{
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 500;
 }
 
