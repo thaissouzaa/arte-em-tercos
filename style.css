@@ -25,6 +25,10 @@ nav img {
     display: none;
 }
 
+.dropdown{
+    display: none;
+}
+
 .hamburger {
     display: block;
     background: none;
@@ -159,14 +163,12 @@ nav img {
     width: 100%;
     max-width: 500px;
     position: relative;
-    margin: auto;
 }
 
 .cards-servicos{
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    gap: 1rem;
     scroll-snap-type: x mandatory;
 }
 
@@ -222,8 +224,6 @@ nav img {
     width: 40px;
 }
 
-
-
 .cards-servicos::-webkit-scrollbar {
     display: none; /* opcional: esconde scrollbar */
 }
@@ -233,6 +233,10 @@ nav img {
     border: var(--cor-tres) !important;
 }
 
+.btn-primary:hover{
+    background-color: var(--cor-tres) !important;
+    color: var(--cor-um) !important;
+}
 
 footer{
     background-color: var(--cor-um);
@@ -368,6 +372,7 @@ footer{
     .link-telagrande a:hover {
         background-color: var(--cor-tres);
         color: var(--cor-um);
+        text-decoration: none;
     }
 
     .nav-list {
@@ -388,6 +393,7 @@ footer{
     .nav-list a {
         color: white;
         padding: 0.5rem 0;
+        font-family: "Rethink Sans", sans-serif;
     }
 
     .nav-list a:hover {
@@ -407,6 +413,233 @@ footer{
     transform: translateY(-50%);
     z-index: 10;
     cursor: pointer;
+}
+
+
+.topo-titulo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 50px;
+
+}
+
+.link-telagrande a{
+    text-decoration: none;
+    font-family: 'rethink sans', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.dropdown button{
+    background-color: var(--cor-um) !important;
+    color: var(--cor-tres) !important;
+    border: none;
+    font-family: 'rethink sans', sans-serif !important;
+    font-size: 25px !important;
+    font-weight: 300 !important;
+}
+
+
+.dropdown ul li a{
+    font-family: 'rethink sans', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 100 !important;
+}
+
+.dropdown ul li a:hover{
+    background-color: var(--cor-tres) !important;
+    color: var(--cor-um) !important;
+}
+
+.titulo{
+    color: var(--cor-tres);
+    font-family: "Rethink Sans", sans-serif;
+    font-weight: 100;
+    font-size: 40px;
+    margin-left: 10px;
+    margin: 20px;
+}
+
+.topo-titulo a{
+    color: gray;
+    border: solid 1px gray;
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: white;
+    font-size: 15px;
+    margin-left:10px ;
+}
+
+.container-cards{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.cards-servicos{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.cards-servicos::-webkit-scrollbar {
+  display: none; /* Esconde a barra de rolagem */
+}
+
+.card-track{
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.card{
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 5px;
+    overflow: hidden;
+    flex: 0 0 auto;
+    width: 50% !important;
+    padding-bottom: 10px !important;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.cards-servicos::-webkit-scrollbar {
+    display: none; /* opcional: esconde scrollbar */
+}
+
+.btn-primary{
+    background-color: var(--cor-dois) !important;
+    border: var(--cor-tres) !important;
+}
+
+.btn-primary:hover{
+    background-color: var(--cor-tres) !important;
+    color: var(--cor-um) !important;
+}
+
+.scroll-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer{
+    background-color: var(--cor-um);
+}
+.footer{
+    display: flex;
+
+}
+
+.footer-img{
+    display: flex;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.footer-img img{
+    width: 80%;
+}
+
+.footer-icones{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icones a{
+    margin: 10px;
+}
+
+.footer-icones a img{
+    width: 20px;
+    background-color: var(--cor);
+    border-radius: 100%;
+    padding: 10px;
+    display: inline-block;
+    box-sizing: content-box;
+}
+
+.footer-direitos{
+    text-align: center;
+    font-family: "Rethink Sans", sans-serif;
+    font-size: 15px;
+}
+
+.container-quemsomos{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    background-color: var(--cor-cinco);
+    padding: 15px; 
+    margin: 100px 0 50px 0;   
+    width: 100;
+}
+
+.quemsomos-img{
+    align-content: center;
+
+}
+
+.quemsomos-img img{
+    width:100%;
+}
+
+.quemsomos-texto{
+    font-family: "Rethink Sans", sans-serif;
+    text-align: center;
+    color: var(--cor-dois);
+    padding-top: 20px;
+}
+
+.quemsomos-texto h3{
+    font-size: 30px;
+}
+
+.quemsomos-texto p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.container-cards2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 5px 30px 5px;
+}
+
+.container-contato{
+    display: flex;
+    justify-content: center;
+
+}
+
+#card-contato{
+    margin: 50px;
+}
+
+.contatos{
+    display: flex;
+    justify-content: left;
+    text-align: center;
+}
+
+.contatos img{
+    width: 7%;
+    padding: 5px;
+    margin-left: 15px;
+    font-family: "Rethink Sans", sans-serif;
 }
 
 }
