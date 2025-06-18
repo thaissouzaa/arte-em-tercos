@@ -188,10 +188,11 @@ nav img {
     margin: 5px;
     overflow: hidden;
     flex: 0 0 auto;
-    width: 25% !important;
+    width: 35% !important;
     padding-bottom: 10px !important;
     flex-grow: 1;
     box-sizing: border-box;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card img{
@@ -200,7 +201,8 @@ nav img {
 }
 
 .card-body{
-    padding: 0 !important;
+    padding: 10px !important;
+    color: #477072 !important;
 }
 
 .button {
@@ -510,10 +512,26 @@ footer{
     margin: 5px;
     overflow: hidden;
     flex: 0 0 auto;
-    width: 50% !important;
+    width: 30% !important;
     padding-bottom: 10px !important;
     flex-grow: 1;
     box-sizing: border-box;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-body h5{
+    font-size: 30px;
+}
+
+.card-body p{
+    font-size: 25px;
+}
+
+.card-body a{
+    font-size: 25px;
 }
 
 .cards-servicos::-webkit-scrollbar {
