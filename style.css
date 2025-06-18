@@ -188,10 +188,12 @@ nav img {
     margin: 5px;
     overflow: hidden;
     flex: 0 0 auto;
-    width: 25% !important;
+    width: 35% !important;
     padding-bottom: 10px !important;
     flex-grow: 1;
     box-sizing: border-box;
+    border: none !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card img{
@@ -200,7 +202,8 @@ nav img {
 }
 
 .card-body{
-    padding: 0 !important;
+    padding: 10px !important;
+    color: #00676d !important;
 }
 
 .button {
@@ -213,7 +216,7 @@ nav img {
     cursor: pointer;
 }
 
-.button button {
+.scroll-btn {
     background-color: gray;
     opacity: 50%;
     color: white;
@@ -513,7 +516,7 @@ footer{
     width: 50% !important;
     padding-bottom: 10px !important;
     flex-grow: 1;
-    box-sizing: border-box;
+    border: none !important;
 }
 
 .cards-servicos::-webkit-scrollbar {
@@ -545,7 +548,7 @@ footer{
 }
 
 .footer-img img{
-    width: 80%;
+    width: 40%;
 }
 
 .footer-icones{
@@ -560,8 +563,7 @@ footer{
 .footer-icones a img{
     width: 20px;
     background-color: var(--cor);
-    border-radius: 100%;
-    padding: 10px;
+    padding: 15px;
     display: inline-block;
     box-sizing: content-box;
 }
