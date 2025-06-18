@@ -192,7 +192,10 @@ nav img {
     padding-bottom: 10px !important;
     flex-grow: 1;
     box-sizing: border-box;
+<<<<<<< HEAD
     border: none !important;
+=======
+>>>>>>> af55d08b6761760d675b32c4cfaf0ba12f7555b0
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -203,7 +206,11 @@ nav img {
 
 .card-body{
     padding: 10px !important;
+<<<<<<< HEAD
     color: #00676d !important;
+=======
+    color: #477072 !important;
+>>>>>>> af55d08b6761760d675b32c4cfaf0ba12f7555b0
 }
 
 .button {
@@ -513,10 +520,26 @@ footer{
     margin: 5px;
     overflow: hidden;
     flex: 0 0 auto;
-    width: 50% !important;
+    width: 30% !important;
     padding-bottom: 10px !important;
     flex-grow: 1;
     border: none !important;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-body h5{
+    font-size: 30px;
+}
+
+.card-body p{
+    font-size: 25px;
+}
+
+.card-body a{
+    font-size: 25px;
 }
 
 .cards-servicos::-webkit-scrollbar {
