@@ -131,7 +131,7 @@ nav img {
     color: var(--cor-tres);
     font-family: "Rethink Sans", sans-serif;
     font-weight: 100;
-    font-size: 25px;
+    font-size: 30px;
     margin-left: 10px;
     margin: 20px;
 }
@@ -161,7 +161,6 @@ nav img {
     justify-content: center;
     overflow: hidden;
     width: 100%;
-    max-width: 500px;
     position: relative;
 }
 
@@ -246,7 +245,6 @@ footer{
 }
 .footer{
     display: flex;
-
 }
 
 .footer-img{
@@ -262,19 +260,20 @@ footer{
 .footer-icones{
     display: flex;
     justify-content: center;
+    height: 70px;
 }
 
 .footer-icones a{
     margin: 10px;
+    border-radius: 100%;
+    padding: 10px;
+    background-color: var(--cor);
 }
 
 .footer-icones a img{
     width: 20px;
-    background-color: var(--cor);
-    border-radius: 100%;
-    padding: 10px;
-    display: inline-block;
-    box-sizing: content-box;
+
+
 }
 
 .footer-direitos{
@@ -291,6 +290,7 @@ footer{
     padding: 15px; 
     margin: 100px 0 50px 0;   
     width: 100;
+    text-align: center;
 }
 
 .quemsomos-img{
@@ -304,9 +304,11 @@ footer{
 
 .quemsomos-texto{
     font-family: "Rethink Sans", sans-serif;
-    text-align: center;
     color: var(--cor-dois);
     padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .quemsomos-texto h3{
@@ -404,21 +406,6 @@ footer{
         background: none;
     }
 
-.button {
-    display: block;
-    justify-content:space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-    width: 100px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    cursor: pointer;
-}
-
-
 .topo-titulo{
     display: flex;
     justify-content: start;
@@ -462,6 +449,16 @@ footer{
     color: var(--cor-um) !important;
 }
 
+.banner{
+    position: relative;
+    text-align: left;
+    height: 80%;
+}
+
+.carousel {
+    height: 40%;
+}
+
 .titulo{
     color: var(--cor-tres);
     font-family: "Rethink Sans", sans-serif;
@@ -481,39 +478,23 @@ footer{
     margin-left:10px ;
 }
 
-.container-cards{
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%;
-    max-width: 500px;
-    position: relative;
-}
-
-.cards-servicos{
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-}
-
-.cards-servicos::-webkit-scrollbar {
-  display: none; /* Esconde a barra de rolagem */
-}
-
-.card-track{
-    display: flex;
-    transition: transform 0.3s ease;
+.container-cards {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  position: relative; /* IMPORTANTE para os botões se posicionarem em relaão a ele */
+  margin: 20px 0 20px 0;
 }
 
 .card{
     display: flex !important;
     justify-content: center !important;
     text-align: center !important;
-    margin: 5px;
+    margin: 15px;
     overflow: hidden;
     flex: 0 0 auto;
-    width: 30% !important;
+    width: 25% !important;
     padding-bottom: 10px !important;
     flex-grow: 1;
     border: none !important;
@@ -537,6 +518,41 @@ footer{
 
 .cards-servicos::-webkit-scrollbar {
     display: none; /* opcional: esconde scrollbar */
+}
+
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute; /* Agora os filhos .scroll-btn podem usar left/right */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none; /* Evita que interfira no scroll */
+}
+
+.scroll-btn {
+  position: absolute;
+  background-color: gray;
+  opacity: 0.5;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  pointer-events: all;
+}
+
+.scroll-btn[data-direction="-1"] {
+  left: 0;
+}
+
+.scroll-btn[data-direction="1"] {
+  right: 0;
 }
 
 .btn-primary{
@@ -570,18 +586,19 @@ footer{
 .footer-icones{
     display: flex;
     justify-content: center;
+    height: 70px;
 }
 
 .footer-icones a{
     margin: 10px;
+    border-radius: 100%;
+    padding: 10px;
+    background-color: var(--cor);
 }
 
 .footer-icones a img{
     width: 20px;
-    background-color: var(--cor);
-    padding: 15px;
-    display: inline-block;
-    box-sizing: content-box;
+
 }
 
 .footer-direitos{
@@ -627,13 +644,6 @@ footer{
 .quemsomos-texto p{
     font-size: 25px;
     font-weight: 500;
-}
-
-.container-cards2{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 30px 5px 30px 5px;
 }
 
 .container-contato{

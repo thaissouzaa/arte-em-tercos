@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function(){
 // SCROLL COM BOTÕES
 document.querySelectorAll('.scroll-btn').forEach(button => {
   button.addEventListener('click', () => {
-    const container = document.querySelector(button.dataset.target);
+    const container = button.closest('.container-cards').querySelector('.cards-servicos');
     const direction = parseInt(button.dataset.direction);
-    const scrollAmount = 300; // Ajuste conforme o tamanho do seu card
+    const scrollAmount = 300;
 
     container.scrollBy({
       left: direction * scrollAmount,
